@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.opsource.net/simpleapp" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="server" type="sim:serverType" xmlns:sim="http://www.opsource.net/simpleapp"/>
+  <xs:complexType name="serverType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="id"/>
+      <xs:element type="xs:string" name="name"/>
+      <xs:element minOccurs ="0" type="xs:string" name="description"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

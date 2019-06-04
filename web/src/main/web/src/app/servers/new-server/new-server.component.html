@@ -1,0 +1,26 @@
+<h1>New Server</h1>
+<hr>
+<div class="col-md-6">
+  <form #newServerForm="ngForm" (ngSubmit)="saveServer(newServerForm.value)" autocomplete="off" novalidate>
+    <div class="form-group" [ngClass]="{'error': newServerForm.controls.id?.invalid && newServerForm.controls.id?.touched}">
+      <label for="id">Server ID:</label>
+      <em *ngIf="newServerForm.controls.id?.invalid && (newServerForm.controls.id?.touched)">Required</em>
+      <input (ngModel)="newServer.id" name="id" required id="id" type="text" class="form-control" placeholder="ID of your server..." />
+    </div>
+    <div class="form-group" [ngClass]="{'error': newServerForm.controls.name?.invalid && newServerForm.controls.name?.touched}">
+      <label for="name">Server Name:</label>
+      <em *ngIf="newServerForm.controls.name?.invalid && (newServerForm.controls.name?.touched)">Required</em>
+      <input (ngModel)="newServer.name" name="name" required id="name" type="text" class="form-control" placeholder="Name of your server..." />
+    </div>
+
+      <div class="form-group" [ngClass]="{'error': newServerForm.controls.description?.invalid && newServerForm.controls.description?.touched}">
+          <label for="name">Server Description:</label>
+          <em *ngIf="newServerForm.controls.description?.invalid && (newServerForm.controls.description?.touched)">Required</em>
+          <input (ngModel)="newServer.description" name="description" required id="description" type="text" class="form-control" placeholder="Description of your server..." />
+      </div>
+
+
+    <button type="submit" [disabled]="newServerForm.invalid" class="btn btn-primary">Save</button>
+    <button type="button" class="btn btn-default" (click)="cancel()">Cancel</button>
+  </form>
+</div>
